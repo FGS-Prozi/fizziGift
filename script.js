@@ -61,7 +61,7 @@ function buyUpgrade(type) {
     document.getElementById(`qty-${type}`).textContent = up.quantity;
     updateCounter();
   } else {
-    alert("Za mało punktów!");
+    alert("Za mało białka!");
   }
 }
 
