@@ -1,0 +1,36 @@
+.music-bar {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #222;
+    color: #fff;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+body { font-family: Arial, sans-serif; background: #f0f0f0; margin: 0; height: 100vh; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+.click-area { position: relative; background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; border-right: 2px solid #ccc; padding: 20px; }
+.click-area h1 { font-size: 4rem; margin: 0; }
+.click-area button { background: none; border: none; padding: 0; cursor: pointer; }
+.click-area img.click-btn { max-width: 269px; width: 100%; height: auto; transition: transform 0.1s ease; }
+.click-area img.click-btn.clicked { transform: scale(0.9); }
+
+/* Animacja pasywna +X */
+.floating-passive { position: absolute; pointer-events: none; font-size: 1rem; color: #4caf50; animation: floatUp 1s forwards; }
+@keyframes floatUp { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-50px); } }
+
+/* Animacja małego obrazka kliku */
+.floating-click { position: absolute; pointer-events: none; width: 40px; height: auto; opacity: 1; animation: floatClick 0.8s forwards; }
+@keyframes floatClick { 0% { opacity: 1; transform: translate(0,0) scale(1); } 100% { opacity: 0; transform: translate(20px,-20px) scale(0.5); } }
+
+.shop-area { background: #f9f9f9; padding: 20px; overflow-y: auto; }
+.shop-area h2 { margin-top: 0; }
+.item { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
+.item-info { display: flex; flex-direction: column; }
+.item-info span { margin-top: 4px; }
+.item button.upgrade-btn { background: none; border: none; padding: 0; cursor: pointer; }
+.item-upgrade { max-width: 169px; width: auto; height: auto; }
