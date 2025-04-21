@@ -51,19 +51,21 @@ checkWin();
 
 
 function buyUpgrade(type) {
-  const up = upgrades[type];
-  if (count >= up.cost) {
-    count -= up.cost;
-    pointsPerSecond += up.production;
-    up.quantity++;
-    up.cost = Math.max(1, Math.floor(up.cost * 1.5));
-    document.getElementById(`cost-${type}`).textContent = up.cost;
-    document.getElementById(`qty-${type}`).textContent = up.quantity;
-    updateCounter();
-  } else {
-    alert("Za mało białka!");
+    const up = upgrades[type];
+    if (count >= up.cost) {
+      count -= up.cost;
+      pointsPerSecond += up.production;
+      up.quantity++;
+      // Zmieniamy sposób obliczania kosztu, aby losować mnożnik z zakresu 1.0 - 2.0
+      up.cost = Math.max(1, Math.floor(up.cost * (1.0 + Math.random())));
+      document.getElementById(`cost-${type}`).textContent = up.cost;
+      document.getElementById(`qty-${type}`).textContent = up.quantity;
+      updateCounter();
+    } else {
+      alert("Za mało białka!");
+    }
   }
-}
+  
 
 function updateCounter() {
   document.getElementById('counter').textContent = count.toLocaleString('pl-PL');

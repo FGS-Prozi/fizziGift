@@ -24,7 +24,7 @@ body { font-family: Arial, sans-serif; background: #f0f0f0; margin: 0; height: 1
 @keyframes floatUp { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-50px); } }
 
 /* Animacja małego obrazka kliku */
-.floating-click { position: absolute; pointer-events: none; width: 40px; height: auto; opacity: 1; animation: floatClick 0.8s forwards; }
+.floating-click { position: absolute; pointer-events: none; width: 169px; height: auto; opacity: 1; animation: floatClick 0.8s forwards; }
 @keyframes floatClick { 0% { opacity: 1; transform: translate(0,0) scale(1); } 100% { opacity: 0; transform: translate(20px,-20px) scale(0.5); } }
 
 .shop-area { background: #f9f9f9; padding: 20px; overflow-y: auto; }
